@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الفريق - الدوري المحلي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #f59e0b;
+            --bg: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-family: 'Cairo';
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(245, 158, 11, 0.4); }
+            100% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--accent);
+            color: #1e293b;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            animation: pulse-animation 2s infinite;
+        }
+
+        .submit-btn:hover {
+            background-color: #d97706;
+            transform: scale(1.02);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="form-header">
+        <h2>🏆 تسجيل فريق جديد</h2>
+        <p>يرجى ملء البيانات للمشاركة في الدوري القادم</p>
+    </div>
+
+    <form action="https://formspree.io/f/YOUR_EMAIL_HERE" method="POST">
+        
+        <input type="hidden" name="_next" value="https://username.github.io/sports-league/thanks.html">
+        
+        <div class="form-group">
+            <label>اسم الفريق</label>
+            <input type="text" name="team_name" placeholder="مثال: أسود الأطلس" required>
+        </div>
+
+        <div class="form-group">
+            <label>اسم مدير الفريق</label>
+            <input type="text" name="manager_name" placeholder="الاسم الكامل" required>
+        </div>
+
+        <div class="form-group">
+            <label>رقم الهاتف (واتساب)</label>
+            <input type="tel" name="phone" placeholder="06XXXXXXXX" required>
+        </div>
+
+        <div class="form-group">
+            <label>الفئة العمرية</label>
+            <select name="age_group" required>
+                <option value="">اختر الفئة...</option>
+                <option value="u15">أقل من 15 سنة</option>
+                <option value="u18">أقل من 18 سنة</option>
+                <option value="adults">كبار</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>ملاحظات إضافية</label>
+            <textarea name="notes" rows="3" placeholder="أي معلومات تود إضافتها..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">إرسال طلب التسجيل</button>
+    </form>
+
+    <a href="index.html" class="back-link">← العودة للرئيسية</a>
+</div>
+
+</body>
+</html>
